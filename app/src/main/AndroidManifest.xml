@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="alvi17.marbleone">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_pebble_blue"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MASPebbleActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PauseGame"
+            android:label="@string/title_pause"
+            android:theme="@style/Theme.Transparent" >
+        </activity>
+        <activity
+            android:name=".GameOver"
+            android:label="@string/title_pause"
+            android:theme="@style/Theme.Transparent" >
+        </activity>
+        <activity
+            android:name=".Browser">
+        </activity>
+        <activity
+            android:label="@string/title_marble_color"
+            android:name=".SelectMarble">
+        </activity>
+        <activity
+            android:label="@string/title_select_board"
+            android:name=".SelectBoard">
+        </activity>
+
+
+    </application>
+
+</manifest>
