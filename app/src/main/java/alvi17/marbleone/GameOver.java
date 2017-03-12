@@ -81,7 +81,7 @@ public class GameOver extends Activity {
 		}
 		if(pebble != 1){
 			ImageView btnNext = (ImageView)findViewById(R.id.nextGame); 
-			btnNext.setVisibility(View.GONE);
+			//btnNext.setVisibility(View.GONE);
 		}
 		
 		txtGameMessage = (TextView)findViewById(R.id.idCongrats);

@@ -5,7 +5,7 @@
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
 
-    <style name="AppBaseTheme" parent="android:Theme.Light">
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -19,17 +19,15 @@
     </style>
     
     
-    <style name="Theme.NoActionBar" parent="android:Theme.Light">
+    <style name="Theme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowNoTitle">true</item>
-        <item name="android:background">#00000000</item>
+
     </style>
     
-    <style name="Theme.Transparent" parent="android:Theme.Black">
+    <style name="Theme.Transparent" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@color/transperant</item>
         <item name="android:windowNoTitle">true</item>
-        <item name="android:backgroundDimEnabled">true</item>
-        <item name="android:colorForeground">#fff</item>
+
     </style>
     
     <style name="ButtonText">

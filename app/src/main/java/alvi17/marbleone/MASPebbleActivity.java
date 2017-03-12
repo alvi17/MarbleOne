@@ -23,6 +23,8 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.ContextThemeWrapper;
 import android.view.View;
@@ -38,7 +40,7 @@ import android.widget.Toast;
 
 
 @SuppressLint("RtlHardcoded")
-public class MASPebbleActivity extends Activity implements OnClickListener, Runnable{
+public class MASPebbleActivity extends AppCompatActivity implements OnClickListener, Runnable{
 
 	SharedPreferences masPref = null;
 	SharedPreferences.Editor prefEditor = null;
