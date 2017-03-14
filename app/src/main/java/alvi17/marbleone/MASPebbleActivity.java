@@ -54,10 +54,10 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 	int board = 0;
 	int lastSelected[] = {-1, -1};
 	
-	
+
 	private int[] getGame0(){
 
-		int board[] = { 
+		int board[] = {
 				-2, -2, -2, -2, -2, -2, -2, -2, -2,
 				-2, -1, -1,  0,  0,  0, -1, -1, -2,
 				-2, -1, -1,  0,  1,  0, -1, -1, -2,
@@ -70,10 +70,12 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		};
 		return board;
 	}
-	
+
+
+
 	private int[] getGame1(){
 
-		int board[] = { 
+		int board[] = {
 				-2, -2, -2, -2, -2, -2, -2, -2, -2,
 				-2, -1, -1,  1,  1,  1, -1, -1, -2,
 				-2, -1, -1,  1,  1,  0, -1, -1, -2,
@@ -86,6 +88,8 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		};
 		return board;
 	}
+
+
 	
 	private int[] getGame2(){
 
@@ -174,11 +178,11 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 	
 	private int[] getGame7(){
 
-		int board[] = { 
-				-1, -1, -1, -1,  1, -1, -1, -1, -1, 
-				-1, -1, -1,  1,  1,  1, -1, -1, -1, 
-				-1, -1,  1,  1,  1,  1,  1, -1, -1, 
-				-1,  1,  1,  1,  1,  1,  1,  1, -1, 
+		int board[] = {
+				-1, -1, -1, -1,  1, -1, -1, -1, -1,
+				-1, -1, -1,  1,  1,  1, -1, -1, -1,
+				-1, -1,  1,  1,  0,  1,  1, -1, -1,
+				-1,  1,  1,  1,  1,  1,  1,  1, -1,
 				 1,  1,  1,  1,  1,  1,  1,  1,  1,
 				-1,  1,  1,  1,  0,  1,  1,  1, -1,
 				-1, -1,  1,  1,  1,  1,  1, -1, -1,
@@ -188,9 +192,164 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		effectiveRows = 10;
 		return board;
 	}
-	
-	
 
+
+
+	private int[] getGame8(){
+
+		int board[] = {
+				-2, -2, -2, -2, -2, -2, -2, -2, -2,
+				-2, -1, -1,  1,  1,  1, -1, -1, -2,
+				-2, -1, -1,  1,  0,  1, -1, -1, -2,
+				-2,  1,  1,  1,  0,  1,  1,  1, -2,
+				-2,  1,  0,  0,  0,  0,  0,  1, -2,
+				-2,  1,  1,  1,  0,  1,  1,  1, -2,
+				-2, -1, -1,  1,  0,  1, -1, -1, -2,
+				-2, -1, -1,  1,  1,  1, -1, -1, -2,
+				-2, -2, -2, -2, -2, -2, -2, -2, -2,
+		};
+		return board;
+	}
+
+	private int[] getGame9(){
+
+		int board[] = {
+				-2, -2, -2, -2, -2, -2, -2, -2, -2,
+				-2, -1, -1,  0,  0,  0, -1, -1, -2,
+				-2, -1, -1,  0,  0,  1, -1, -1, -2,
+				-2,  1,  1,  0,  0,  1,  1,  1, -2,
+				-2,  1,  1,  0,  1,  1,  1,  1, -2,
+				-2,  1,  1,  1,  1,  1,  1,  1, -2,
+				-2, -1, -1,  1,  1,  1, -1, -1, -2,
+				-2, -1, -1,  1,  1,  1, -1, -1, -2,
+				-2, -2, -2, -2, -2, -2, -2, -2, -2,
+		};
+		return board;
+	}
+
+
+	private int[] getGame10(){
+
+		int board[] = {
+				-2, -2, -2, -2, -2, -2, -2, -2, -2,
+				-2, -1, -1,  1,  1,  1, -1, -1, -2,
+				-2, -1, -1,  1,  1,  1, -1, -1, -2,
+				-2,  0,  0,  1,  1,  1,  0,  0, -2,
+				-2,  0,  0,  1,  0,  1,  0,  0, -2,
+				-2,  0,  0,  0,  0,  0,  0,  0, -2,
+				-2, -1, -1,  0,  0,  0, -1, -1, -2,
+				-2, -1, -1,  0,  0,  0, -1, -1, -2,
+				-2, -2, -2, -2, -2, -2, -2, -2, -2,
+		};
+		return board;
+	}
+
+
+
+	private int[] getGame11(){
+		int board[] = {
+				-2, -2, -2,-2,-2,-2, -2, -2, -2,
+				-2, -1, -1, 1, 1, 1, -1, -1, -2,
+				-2, -1, -1, 1, 1, 1, -1, -1, -2,
+				-2,  1,  1, 1, 1, 1,  1,  1, -2,
+				-2,  1,  1, 1, 0, 1,  1,  1, -2,
+				-2,  1,  1, 1, 1, 1,  1,  1, -2,
+				-2, -1, -1, 1, 1, 1, -1, -1, -2,
+				-2, -1, -1, 1, 1, 1, -1, -1, -2,
+				-2, -2, -2,-2,-2,-2, -2, -2, -2
+
+		};
+		effectiveRows = 8;
+		return board;
+	}
+
+	private int[] getGame12(){
+		int board[] = {
+				-2, -2, -2,-2,-2,-2, -2, -2, -2,
+				-2, -1, -1, 1, 1, 0, -1, -1, -2,
+				-2, -1,  1, 1, 1, 1,  1, -1, -2,
+				-2,  0,  1, 1, 1, 1,  1,  1, -2,
+				-2,  1,  1, 1, 1, 0,  1,  1, -2,
+				-2,  1,  1, 1, 1, 1,  1,  1, -2,
+				-2, -1,  1, 1, 1, 1,  0, -1, -2,
+				-2, -1, -1, 1, 1, 1, -1, -1, -2,
+				-2, -2, -2,-2,-2,-2, -2, -2, -2
+		};
+		effectiveRows = 8;
+		return board;
+	}
+
+
+	private int[] getGame13(){
+
+		int board[] = {
+				-2, -2, -2, -2, -2, -2, -2, -2, -2,
+				-1, -1, -1,  0,  1,  1, -1, -1, -2,
+				-1, -1, -1,  1,  1,  1, -1, -1, -2,
+				1,  1,  1,  1,  1,  1,  1,  1, -2,
+				1,  1,  1,  1,  1,  1,  1,  1, -2,
+				1,  1,  1,  1,  1,  1,  1,  1, -2,
+				-1, -1, -1,  1,  1,  1, -1, -1, -2,
+				-1, -1, -1,  1,  1,  1, -1, -1, -2,
+				-1, -1, -1,  1,  1,  1, -1, -1, -2,
+
+		};
+		effectiveRows = 10;
+		return board;
+	}
+
+	private int[] getGame15(){
+
+		int board[] = {
+				-2, -2, -2, -2, -2, -2, -2, -2, -2,
+				-1, -1, -1,  0,  1,  1, -1, -1, -2,
+				-1, -1, -1,  1,  1,  1, -1, -1, -2,
+				1,  1,  1,  1,  1,  1,  1,  1, -2,
+				1,  1,  1,  1,  1,  1,  1,  1, -2,
+				1,  1,  1,  1,  1,  1,  1,  1, -2,
+				-1, -1, -1,  1,  1,  1, -1, -1, -2,
+				-1, -1, -1,  1,  1,  1, -1, -1, -2,
+				-1, -1, -1,  1,  0,  1, -1, -1, -2,
+
+		};
+		effectiveRows = 10;
+		return board;
+	}
+
+	private int[] getGame16(){
+
+		int board[] = {
+				-2, -2, -2, -2, -2, -2, -2, -2, -2,
+				-1, -1, -1,  0,  1,  1, -1, -1, -2,
+				-1, -1, -1,  1,  1,  1, -1, -1, -2,
+				1,  1,  1,  1,  1,  1,  1,  1, -2,
+				1,  1,  1,  1,  1,  1,  1,  1, -2,
+				1,  1,  1,  1,  1,  1,  1,  0, -2,
+				-1, -1, -1,  1,  1,  1, -1, -1, -2,
+				-1, -1, -1,  1,  1,  1, -1, -1, -2,
+				-1, -1, -1,  1,  1,  1, -1, -1, -2,
+
+		};
+		effectiveRows = 10;
+		return board;
+	}
+
+	private int[] getGame14(){
+
+		int board[] = {
+				1, 1, 1, 1,  1, 1, 1, 1, 1,
+				1, 1, -1,  1,  1,  1, -1, -1, 1,
+				1, 1,  1,  1,  1,  1,  1, -1, 1,
+				1,  1,  1,  1,  1,  1,  1,  1, -1,
+				1,  1,  1,  1,  1,  1,  1,  1,  1,
+				1,  1,  1,  1,  0,  1,  1,  1, -1,
+				1, 1,  1,  1,  1,  1,  1, -1, -1,
+				1, 1, 1,  1,  1,  1, 1, 1, 1,
+				1, 1, 1, 1,  1, 1, 1, 1, 1,
+		};
+		effectiveRows = 10;
+		return board;
+	}
 
 	int pebble[];
 	
@@ -269,7 +428,7 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		
 
 		setVolumeControlStream(AudioManager.STREAM_MUSIC);
-		masPref = this.getSharedPreferences("com.easwareapps.maspebble", MODE_PRIVATE);
+		masPref = this.getSharedPreferences("alvi17.marbleone", MODE_PRIVATE);
 		int newboard = masPref.getInt("board", DEFAULT);
 		board = newboard;
 		switch(newboard){
@@ -373,7 +532,7 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		lastSelected[1] = -1;
 		
 		
-		SharedPreferences masPref = this.getSharedPreferences("com.easwareapps.maspebble", MODE_PRIVATE);
+		SharedPreferences masPref = this.getSharedPreferences("alvi17.marbleone", MODE_PRIVATE);
 		int newboard = masPref.getInt("board", DEFAULT);
 		System.out.println(newboard+"=index\n");
 		switch(newboard){
@@ -427,56 +586,6 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 
 	private void saveImage() {
 		// TODO Auto-generated method stub
-		try{
-			invalidateAll();
-		}catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-		RelativeLayout.LayoutParams rl = (RelativeLayout.LayoutParams)imgPebble[0][2].getLayoutParams();
-
-		int pebble = imgPebble[0][2].getLayoutParams().width;
-		int space = rl.leftMargin;
-		int size = (pebble + space)*8;
-
-
-		Bitmap bitmap = Bitmap.createBitmap(size, size,
-				Bitmap.Config.ARGB_8888);
-
-		Canvas c = new Canvas(bitmap);
-		c.drawColor(0xFFFFFFFF);
-		mainLayout.draw(c);
-
-
-		String dirPath = Environment.getExternalStorageDirectory() +
-				File.separator + ".com.easwareapps.maspebble";
-		File dir = new File(dirPath);
-		if(!dir.exists()){
-			dir.mkdir();
-		}
-
-		if(dir.exists()){
-			String imagePath = dirPath + File.separator + "result.png";   
-
-
-			OutputStream fout = null;
-			File imageFile = new File(imagePath);
-
-			try {
-				fout = new FileOutputStream(imageFile);
-				bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fout);
-				fout.flush();
-				fout.close();
-
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-		}
 
 		Intent intent = new Intent(getApplicationContext(), GameOver.class);
 		int score = calculateScore(moveIndex + 1);
@@ -488,16 +597,15 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		}
 		if(noPebbles == 1){
 			intent.putExtra("message", getResources().getString(R.string.title_hatsoff));
-			intent.putExtra("send", String.format(getResources().getString(R.string.title_finished), score + timebonus)
-					+ getResources().getString(R.string.title_to_download));
+			intent.putExtra("send", String.format(getResources().getString(R.string.title_finished), score + timebonus));
+
 		}else if(noPebbles < 4){
 			intent.putExtra("message", getResources().getString(R.string.title_great));
-			intent.putExtra("send", String.format(getResources().getString(R.string.title_game_end), score + timebonus)
-					+ getResources().getString(R.string.title_to_download));
+			intent.putExtra("send", String.format(getResources().getString(R.string.title_game_end), score + timebonus));
 		}else{
 			intent.putExtra("message", getResources().getString(R.string.title_gameover));
-			intent.putExtra("send", String.format(getResources().getString(R.string.title_game_end), score + timebonus)
-					+ getResources().getString(R.string.title_to_download));
+			intent.putExtra("send", String.format(getResources().getString(R.string.title_game_end), score + timebonus));
+
 		}
 		intent.putExtra("bonus", timebonus);
 		startActivityForResult(intent, 0);
@@ -873,7 +981,7 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 			break;
 		case ACTION_RESUME:
 			gamePaused = false;
-			SharedPreferences masPref = this.getSharedPreferences("com.easwareapps.maspebble", MODE_PRIVATE);
+			SharedPreferences masPref = this.getSharedPreferences("alvi17.marbleone", MODE_PRIVATE);
 			int newboard = masPref.getInt("board", DEFAULT);
 			if(board != newboard){
 				board = newboard;
@@ -1199,8 +1307,6 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		Intent i = new Intent(this, PauseGame.class);
 		MASPebbleActivity.this.startActivityForResult(i, 0);
 		return;
-
-
 	}
 
 	private void select(int i, int j, boolean type) {

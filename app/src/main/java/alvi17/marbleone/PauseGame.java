@@ -34,7 +34,7 @@ public class PauseGame extends Activity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		masPref = this.getSharedPreferences("com.easwareapps.maspebble", MODE_PRIVATE);
+		masPref = this.getSharedPreferences("alvi17.marbleone", MODE_PRIVATE);
 
 		setContentView(R.layout.pause_layout);
 

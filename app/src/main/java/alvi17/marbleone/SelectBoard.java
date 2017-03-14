@@ -36,7 +36,7 @@ public class SelectBoard extends Activity implements OnClickListener {
 		}
 		
 
-		SharedPreferences masPref = this.getSharedPreferences("com.easwareapps.maspebble", MODE_PRIVATE);
+		SharedPreferences masPref = this.getSharedPreferences("alvi17.marbleone", MODE_PRIVATE);
 		int index = masPref.getInt("board", BOARD);
 		
 		for(int i=0;i<NO_BOARDS;i++){
@@ -56,7 +56,7 @@ public class SelectBoard extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		SharedPreferences masPref = this.getSharedPreferences("com.easwareapps.maspebble", MODE_PRIVATE);
+		SharedPreferences masPref = this.getSharedPreferences("alvi17.marbleone", MODE_PRIVATE);
 		SharedPreferences.Editor prefEditor = masPref.edit();
 		for(int i=0;i<NO_BOARDS;i++){
 			if(v == imgBoards[i]){
@@ -70,7 +70,7 @@ public class SelectBoard extends Activity implements OnClickListener {
 	
 	private void changeBoard(int index) {
 		// TODO Auto-generated method stub
-		SharedPreferences masPref = this.getSharedPreferences("com.easwareapps.maspebble", MODE_PRIVATE);
+		SharedPreferences masPref = this.getSharedPreferences("alvi17.marbleone", MODE_PRIVATE);
 		SharedPreferences.Editor prefEditor = masPref.edit();
 		
 		int currentIndex = masPref.getInt("board", BOARD);

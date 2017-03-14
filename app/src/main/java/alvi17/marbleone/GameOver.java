@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-
 public class GameOver extends Activity {
 
 	TextView txtGameScore;
@@ -23,8 +22,6 @@ public class GameOver extends Activity {
 	TextView txtTotalScore;
 	TextView txtGameMessage;
 	int NO_BOARDS = 8;
-
-
 
 	int score = 0;
 	int bonus = 0;
@@ -55,11 +52,11 @@ public class GameOver extends Activity {
 
 
 		try{
+
 			Intent intent = getIntent();
 			SCORE = intent.getIntExtra("score", 0);
 			BONUS = intent.getIntExtra("bonus", 0);
 			message = intent.getStringExtra("message");
-			send = intent.getStringExtra("send");
 			pebble = intent.getIntExtra("pebble", 31);
 
 			incrementerScore = SCORE / 10;
@@ -67,12 +64,11 @@ public class GameOver extends Activity {
 
 			TOTAL = SCORE + BONUS;
 
-
 		}catch (Exception e) {
 			// TODO: handle exception
 		}
 		setContentView(R.layout.game_over_layout);
-		SharedPreferences masPref = this.getSharedPreferences("com.easwareapps.maspebble", MODE_PRIVATE);
+		SharedPreferences masPref = this.getSharedPreferences("alvi17.marbleone", MODE_PRIVATE);
 		int i=0;
 		for(i=0; i<NO_BOARDS; i++){
 			if(!masPref.getBoolean("game"+i+"_finished", false)){
@@ -81,7 +77,7 @@ public class GameOver extends Activity {
 		}
 		if(pebble != 1){
 			ImageView btnNext = (ImageView)findViewById(R.id.nextGame); 
-			//btnNext.setVisibility(View.GONE);
+			btnNext.setVisibility(View.GONE);
 		}
 		
 		txtGameMessage = (TextView)findViewById(R.id.idCongrats);
@@ -140,21 +136,6 @@ public class GameOver extends Activity {
 
 	public void shareResult(View view){
 
-		String imagePath = Environment.getExternalStorageDirectory() +
-				File.separator + ".com.easwareapps.maspebble" + File.separator
-				+ "result.png";
-		File resultImage = new File(imagePath); 
-
-		if(resultImage.exists()){
-			Intent share = new Intent(Intent.ACTION_SEND);
-			share.setType("image/png");
-			Uri uri = Uri.fromFile(resultImage);
-			share.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.app_name));
-			share.putExtra(Intent.EXTRA_TEXT,   send);
-			share.putExtra(Intent.EXTRA_STREAM, uri);
-			startActivity(Intent.createChooser(share, getResources().getString(R.string.title_share_image)));
-		}
-
 	}
 
 	public void restartGame(View view){
@@ -170,7 +151,7 @@ public class GameOver extends Activity {
 	}
 
 	public void nextGame(View view){
-		SharedPreferences masPref = this.getSharedPreferences("com.easwareapps.maspebble", MODE_PRIVATE);
+		SharedPreferences masPref = this.getSharedPreferences("alvi17.marbleone", MODE_PRIVATE);
 		int i=0;
 		for(i=0; i<NO_BOARDS; i++){
 			if(!masPref.getBoolean("game"+i+"_finished", false)){

@@ -45,7 +45,7 @@ public class SelectMarble extends Activity implements OnClickListener {
 		imgSelectedMarbles[2].setOnClickListener(this);
 		imgSelectedMarbles[3].setOnClickListener(this);
 		imgSelectedMarbles[4].setOnClickListener(this);
-		SharedPreferences masPref = this.getSharedPreferences("com.easwareapps.maspebble", MODE_PRIVATE);
+		SharedPreferences masPref = this.getSharedPreferences("alvi17.marbleone", MODE_PRIVATE);
 		int index = masPref.getInt("pebble", BLUE);
 		Log.d("INDEX", index+"");
 		imgMarbles[index].setImageResource(R.drawable.ic_marble_select_frame);
@@ -59,7 +59,7 @@ public class SelectMarble extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		SharedPreferences masPref = this.getSharedPreferences("com.easwareapps.maspebble", MODE_PRIVATE);
+		SharedPreferences masPref = this.getSharedPreferences("alvi17.marbleone", MODE_PRIVATE);
 		SharedPreferences.Editor prefEditor = masPref.edit();
 		for(int i=0;i<NO_MARBLES;i++){
 			if(v == imgMarbles[i]){
@@ -86,7 +86,7 @@ public class SelectMarble extends Activity implements OnClickListener {
 	private void changeMarble(int index) {
 		// TODO Auto-generated method stub
 		Log.d("index", index+"");
-		SharedPreferences masPref = this.getSharedPreferences("com.easwareapps.maspebble", MODE_PRIVATE);
+		SharedPreferences masPref = this.getSharedPreferences("alvi17.marbleone", MODE_PRIVATE);
 		SharedPreferences.Editor prefEditor = masPref.edit();
 		
 		int currentIndex = masPref.getInt("pebble", BLUE);
@@ -100,7 +100,7 @@ public class SelectMarble extends Activity implements OnClickListener {
 	
 	private void changeSelectedMarble(int i) {
 		// TODO Auto-generated method stub
-		SharedPreferences masPref = this.getSharedPreferences("com.easwareapps.maspebble", MODE_PRIVATE);
+		SharedPreferences masPref = this.getSharedPreferences("alvi17.marbleone", MODE_PRIVATE);
 		SharedPreferences.Editor prefEditor = masPref.edit();
 		
 		int currentIndex = masPref.getInt("selected_pebble", RED);
