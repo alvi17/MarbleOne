@@ -27,6 +27,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.ContextThemeWrapper;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
@@ -336,20 +338,90 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 
 	private int[] getGame14(){
 
-		int board[] = {
-				1, 1, 1, 1,  1, 1, 1, 1, 1,
-				1, 1, -1,  1,  1,  1, -1, -1, 1,
-				1, 1,  1,  1,  1,  1,  1, -1, 1,
-				1,  1,  1,  1,  1,  1,  1,  1, -1,
-				1,  1,  1,  1,  1,  1,  1,  1,  1,
-				1,  1,  1,  1,  0,  1,  1,  1, -1,
-				1, 1,  1,  1,  1,  1,  1, -1, -1,
-				1, 1, 1,  1,  1,  1, 1, 1, 1,
-				1, 1, 1, 1,  1, 1, 1, 1, 1,
-		};
-		effectiveRows = 10;
-		return board;
-	}
+        int board[] = {
+                1, 1, 1, 1,  1, 1, 1, 1, 1,
+                1, 1, -1,  1,  1,  1, -1, -1, 1,
+                1, 1,  1,  1,  1,  1,  1, -1, 1,
+                1,  1,  1,  1,  1,  1,  1,  1, -1,
+                1,  1,  1,  1,  1,  1,  1,  1,  1,
+                1,  1,  1,  1,  0,  1,  1,  1, -1,
+                1, 1,  1,  1,  1,  1,  1, -1, -1,
+                1, 1, 1,  1,  1,  1, 1, 1, 1,
+                1, 1, 1, 1,  1, 1, 1, 1, 1,
+        };
+        effectiveRows = 10;
+        return board;
+    }
+
+
+
+    private int[] getGame17(){
+
+        int board[] = {
+                0, 1, 1, 1,  1, 1, 1, 1, 1,
+                1, 1, 1,  1,  1,  1, 1, 1, 1,
+                1, 1,  1,  1,  1,  1,  1, 1, 1,
+                1,  1,  1,  1,  1,  1,  1,  1, 1,
+                1,  1,  1,  1,  1,  1,  1,  1,  1,
+                1,  1,  1,  1,  0,  1,  1,  1, 1,
+                1, 1,  1,  1,  1,  1,  1, 1, 1,
+                1, 1, 1,  1,  1,  1, 1, 1, 1,
+                1, 1, 1, 1,  1, 1, 1, 1, 1,
+        };
+        effectiveRows = 10;
+        return board;
+    }
+
+    private int[] getGame18(){
+
+        int board[] = {
+                0, 1, 1, 1,  1, 1, 1, 1, 1,
+                1, 1, 1,  1,  1,  1, 1, 1, 1,
+                1, 1,  1,  1,  1,  1,  1, 1, 1,
+                1,  1,  1,  1,  1,  1,  1,  1, 1,
+                1,  1,  1,  1,  1,  1,  1,  1,  1,
+                1,  1,  1,  1,  0,  1,  1,  1, 1,
+                1, 1,  1,  1,  1,  1,  1, 1, 1,
+                1, 1, 1,  1,  1,  1, 1, 1, 1,
+                1, 1, 1, 1,  1, 1, 1, 1, 0,
+        };
+        effectiveRows = 10;
+        return board;
+    }
+
+    private int[] getGame19(){
+
+        int board[] = {
+                -1, 1, 1, 1,  1, 1, 1, 1, 1,
+                1, 1, 1,  1,  1,  1, 1, 1, 1,
+                1, 1,  1,  1,  1,  1,  1, 1, 1,
+                1,  1,  1,  1,  1,  1,  1,  1, 1,
+                1,  1,  1,  1,  1,  1,  1,  1,  1,
+                1,  1,  1,  1,  0,  1,  1,  1, 1,
+                1, 1,  1,  1,  1,  1,  1, 1, 1,
+                1, 1, 1,  1,  1,  1, 1, 1, 1,
+                -1, 1, 1, 1,  1, 1, 1, 1, -1,
+        };
+        effectiveRows = 10;
+        return board;
+    }
+
+    private int[] getGame20(){
+
+        int board[] = {
+                1, 1, 1, 1,  1, 1, 1, 1, 1,
+                1, 1, 1,  1,  1,  1, 1, 1, 1,
+                1, 1,  1,  1,  1,  1,  1, 1, 1,
+                1,  1,  1,  1,  1,  1,  1,  1, 1,
+                1,  1,  1,  1,  1,  1,  1,  1,  1,
+                1,  1,  1,  1,  0,  1,  1,  1, 1,
+                1, 1,  1,  1,  1,  1,  1, 1, 1,
+                1, 1, 1,  1,  1,  1, 1, 1, 1,
+                1, 1, 1, 1,  1, 1, 1, 1, 1,
+        };
+        effectiveRows = 10;
+        return board;
+    }
 
 	int pebble[];
 	
@@ -432,14 +504,27 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		int newboard = masPref.getInt("board", DEFAULT);
 		board = newboard;
 		switch(newboard){
-		case 0: pebble = getGame0();break;
-		case 1: pebble = getGame1();break;
-		case 2: pebble = getGame2();break;
-		case 3: pebble = getGame3();break;
-		case 4: pebble = getGame4();break;
-		case 5: pebble = getGame5();break;
-		case 6: pebble = getGame6();break;
-		case 7: pebble = getGame7();break;
+            case 0: pebble = getGame0();break;
+            case 1: pebble = getGame1();break;
+            case 2: pebble = getGame2();break;
+            case 3: pebble = getGame3();break;
+            case 4: pebble = getGame4();break;
+            case 5: pebble = getGame5();break;
+            case 6: pebble = getGame6();break;
+            case 7: pebble = getGame7();break;
+            case 8:pebble=getGame8();break;
+            case 9:pebble=getGame9();break;
+            case 10:pebble=getGame10();break;
+            case 11: pebble = getGame11();break;
+            case 12: pebble = getGame12();break;
+            case 13: pebble = getGame13();break;
+            case 14: pebble = getGame14();break;
+            case 15: pebble = getGame15();break;
+            case 16: pebble = getGame16();break;
+            case 17: pebble = getGame17();break;
+            case 18: pebble = getGame18();break;
+            case 19:pebble=getGame19();break;
+            case 20:pebble=getGame20();break;
 		default: pebble = getGame0();break;
 		}
 		noPebbles = getPebblesInBoard();
@@ -536,14 +621,27 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		int newboard = masPref.getInt("board", DEFAULT);
 		System.out.println(newboard+"=index\n");
 		switch(newboard){
-		case 0: pebble = getGame0();break;
-		case 1: pebble = getGame1();break;
-		case 2: pebble = getGame2();break;
-		case 3: pebble = getGame3();break;
-		case 4: pebble = getGame4();break;
-		case 5: pebble = getGame5();break;
-		case 6: pebble = getGame6();break;
-		case 7: pebble = getGame7();break;
+            case 0: pebble = getGame0();break;
+            case 1: pebble = getGame1();break;
+            case 2: pebble = getGame2();break;
+            case 3: pebble = getGame3();break;
+            case 4: pebble = getGame4();break;
+            case 5: pebble = getGame5();break;
+            case 6: pebble = getGame6();break;
+            case 7: pebble = getGame7();break;
+            case 8:pebble=getGame8();break;
+            case 9:pebble=getGame9();break;
+            case 10:pebble=getGame10();break;
+            case 11: pebble = getGame11();break;
+            case 12: pebble = getGame12();break;
+            case 13: pebble = getGame13();break;
+            case 14: pebble = getGame14();break;
+            case 15: pebble = getGame15();break;
+            case 16: pebble = getGame16();break;
+            case 17: pebble = getGame17();break;
+            case 18: pebble = getGame18();break;
+            case 19:pebble=getGame19();break;
+            case 20:pebble=getGame20();break;
 		default: pebble = getGame0();break;
 		}
 		noPebbles = getPebblesInBoard();
@@ -897,14 +995,14 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		btnMusicMute = (ImageView)findViewById(R.id.idBtnMusicMute);
 
 		if(masPref.getBoolean("sound", true)){
-			btnMute.setImageResource(R.drawable.ic_sound);
+			btnMute.setImageResource(R.drawable.ic_volume_up_black_24dp);
 		}else{
-			btnMute.setImageResource(R.drawable.ic_mute);
+			btnMute.setImageResource(R.drawable.ic_volume_off_black_24dp);
 		}
 		if(masPref.getBoolean("music", true)){
-			btnMusicMute.setImageResource(R.drawable.ic_music);
+			btnMusicMute.setImageResource(R.drawable.ic_audiotrack_black_24dp);
 		}else{
-			btnMusicMute.setImageResource(R.drawable.ic_music_mute);
+			btnMusicMute.setImageResource(R.drawable.ic_audiotrack_off_black_24dp);
 		}
 
 		btnPause.setSoundEffectsEnabled(false);
@@ -1510,11 +1608,11 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		if(masPref.getBoolean("sound", true)){
 			prefEditor.putBoolean("sound", false);
 			prefEditor.commit();
-			btnMute.setImageResource(R.drawable.ic_mute);
+			btnMute.setImageResource(R.drawable.ic_volume_off_black_24dp);
 		}else{
 			prefEditor.putBoolean("sound", true);
 			prefEditor.commit();
-			btnMute.setImageResource(R.drawable.ic_sound);
+			btnMute.setImageResource(R.drawable.ic_volume_up_black_24dp);
 		}
 	}
 
@@ -1524,12 +1622,12 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 			prefEditor.putBoolean("music", false);
 			prefEditor.commit();
 			musicPlayer.pause();
-			btnMusicMute.setImageResource(R.drawable.ic_music_mute);
+			btnMusicMute.setImageResource(R.drawable.ic_audiotrack_off_black_24dp);
 		}else{
 			prefEditor.putBoolean("music", true);
 			prefEditor.commit();
 			musicPlayer.start();
-			btnMusicMute.setImageResource(R.drawable.ic_music);
+			btnMusicMute.setImageResource(R.drawable.ic_audiotrack_black_24dp);
 		}
 	}
 
@@ -1557,5 +1655,23 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		super.onResume();
 	}
 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.menu_main,menu);
+		return true;
+	}
 
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+
+		int id=item.getItemId();
+
+		if(id==R.id.menu_undo)
+		{
+			undoMove();
+		}
+
+
+		return true;
+	}
 }

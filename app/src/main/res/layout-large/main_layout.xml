@@ -16,9 +16,13 @@
         <TextView
             android:id="@+id/idTxtTimeValue"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/time_zero"
+            android:padding="10dp"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="16dp"
             android:textSize="35sp" />
         
         <ImageView
@@ -27,7 +31,8 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/title_mute"
             android:onClick="toggleMusic"
-            android:src="@drawable/ic_music" />
+            android:padding="16dp"
+            android:src="@drawable/ic_audiotrack_black_24dp" />
         
         <ImageView
             android:id="@+id/idBtnMute"
@@ -35,14 +40,16 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/title_mute"
             android:onClick="toggleSound"
-            android:src="@drawable/ic_sound" />
+            android:padding="16dp"
+            android:src="@drawable/ic_volume_up_black_24dp" />
         
         <ImageView
             android:id="@+id/idBtnPause"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/title_pause"
-            android:src="@drawable/pause" />
+            android:padding="16dp"
+            android:src="@drawable/ic_pause_black_24dp" />
 
     </LinearLayout>
 
@@ -51,9 +58,9 @@
         android:layout_width="wrap_content"
         android:layout_height="0sp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_weight="1"
-        android:background="#FFFFFFFF" >
+        android:background="#FFFFFFFF">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -62,7 +69,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:background="#00FFFFFF" >
+            android:background="#00FFFFFF">
 
             <ImageView
                 android:id="@+id/idSlot00"
@@ -883,7 +890,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:background="#00FFFFFF" >
+            android:background="#00FFFFFF">
 
             <ImageView
                 android:id="@+id/idPebble00"

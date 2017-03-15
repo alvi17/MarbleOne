@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 public class SelectBoard extends Activity implements OnClickListener {
 
-	int NO_BOARDS = 8;
+	int NO_BOARDS =21;
 	int BOARD = 0;
 	ImageView imgBoards[] = new ImageView[NO_BOARDS];
 	 
@@ -30,6 +30,23 @@ public class SelectBoard extends Activity implements OnClickListener {
 		imgBoards[5] = (ImageView)findViewById(R.id.idImgBoard5);
 		imgBoards[6] = (ImageView)findViewById(R.id.idImgBoard6);
 		imgBoards[7] = (ImageView)findViewById(R.id.idImgBoard7);
+
+		imgBoards[8] = (ImageView)findViewById(R.id.idImgBoard8);
+		imgBoards[9] = (ImageView)findViewById(R.id.idImgBoard9);
+		imgBoards[10] = (ImageView)findViewById(R.id.idImgBoard10);
+		imgBoards[11] = (ImageView)findViewById(R.id.idImgBoard11);
+		imgBoards[12] = (ImageView)findViewById(R.id.idImgBoard12);
+		imgBoards[13] = (ImageView)findViewById(R.id.idImgBoard13);
+		imgBoards[14] = (ImageView)findViewById(R.id.idImgBoard14);
+		imgBoards[15] = (ImageView)findViewById(R.id.idImgBoard15);
+
+		imgBoards[16] = (ImageView)findViewById(R.id.idImgBoard16);
+		imgBoards[17] = (ImageView)findViewById(R.id.idImgBoard17);
+		imgBoards[18] = (ImageView)findViewById(R.id.idImgBoard18);
+		imgBoards[19] = (ImageView)findViewById(R.id.idImgBoard19);
+		imgBoards[20] = (ImageView)findViewById(R.id.idImgBoard20);
+
+
 		
 		for(int i=0;i<NO_BOARDS;i++){
 			imgBoards[i].setOnClickListener(this);

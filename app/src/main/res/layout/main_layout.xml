@@ -19,7 +19,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/time_zero"
-            android:textSize="25sp" />
+            android:padding="10dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="28sp" />
 
         <ImageView
             android:id="@+id/idBtnMusicMute"
@@ -28,7 +30,7 @@
             android:layout_marginRight="10dp"
             android:contentDescription="@string/title_mute"
             android:onClick="toggleMusic"
-            android:src="@drawable/ic_music" />
+            android:src="@drawable/ic_audiotrack_black_24dp" />
 
         <ImageView
             android:id="@+id/idBtnMute"
@@ -37,7 +39,7 @@
             android:layout_marginRight="10dp"
             android:contentDescription="@string/title_mute"
             android:onClick="toggleSound"
-            android:src="@drawable/ic_sound" />
+            android:src="@drawable/ic_volume_up_black_24dp" />
 
         <ImageView
             android:id="@+id/idBtnPause"
@@ -45,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:contentDescription="@string/title_pause"
-            android:src="@drawable/pause" />
+            android:src="@drawable/ic_pause_black_24dp" />
     </LinearLayout>
 
     <RelativeLayout

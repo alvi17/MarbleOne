@@ -11,12 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5sp"
+        android:padding="10dp"
         android:orientation="horizontal" >
 
         <TextView
             android:id="@+id/idTxtTimeValue"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/time_zero"
             android:textSize="70sp" />
@@ -27,7 +28,8 @@
             android:layout_height="100sp"
             android:contentDescription="@string/title_mute"
             android:onClick="toggleMusic"
-            android:src="@drawable/ic_music" />
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_audiotrack_black_24dp" />
 
         
         <ImageView
@@ -36,14 +38,16 @@
             android:layout_height="100sp"
             android:contentDescription="@string/title_mute"
             android:onClick="toggleSound"
-            android:src="@drawable/ic_sound" />
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_volume_up_black_24dp" />
         
         <ImageView
             android:id="@+id/idBtnPause"
             android:layout_width="100sp"
             android:layout_height="100sp"
             android:contentDescription="@string/title_pause"
-            android:src="@drawable/pause" />
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_pause_black_24dp"/>
 
     </LinearLayout>
 
@@ -52,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0sp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_weight="1"
         android:background="#FFFFFFFF" >
 
