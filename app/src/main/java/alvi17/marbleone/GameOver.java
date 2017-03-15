@@ -1,19 +1,14 @@
 package alvi17.marbleone;
 
-import java.io.File;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 
 public class GameOver extends Activity {
 
@@ -21,7 +16,7 @@ public class GameOver extends Activity {
 	TextView txtTimeBonus;
 	TextView txtTotalScore;
 	TextView txtGameMessage;
-	int NO_BOARDS = 8;
+	int NO_BOARDS = 21;
 
 	int score = 0;
 	int bonus = 0;
@@ -40,16 +35,12 @@ public class GameOver extends Activity {
 	int incrementerScore = 0;
 	int incrementerBonus = 0;
 
-	
-
 	ProgressDialog progressSpinner = null;
-
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-
 
 		try{
 
@@ -58,14 +49,14 @@ public class GameOver extends Activity {
 			BONUS = intent.getIntExtra("bonus", 0);
 			message = intent.getStringExtra("message");
 			pebble = intent.getIntExtra("pebble", 31);
-
 			incrementerScore = SCORE / 10;
 			incrementerScore = BONUS / 10;
-
 			TOTAL = SCORE + BONUS;
 
-		}catch (Exception e) {
+		}
+		catch (Exception e) {
 			// TODO: handle exception
+
 		}
 		setContentView(R.layout.game_over_layout);
 		SharedPreferences masPref = this.getSharedPreferences("alvi17.marbleone", MODE_PRIVATE);

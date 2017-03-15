@@ -91,6 +91,7 @@ public class PauseGame extends Activity implements OnClickListener{
 		}else if(view == btnChangeBoard){
 			Intent intent = new Intent(this, SelectBoard.class);
 			startActivity(intent);
+			finish();
 			return;
 		}else if(view == btnChangeColor){
 			Intent intent = new Intent(this, SelectMarble.class);
@@ -101,7 +102,7 @@ public class PauseGame extends Activity implements OnClickListener{
 			setResult(Activity.RESULT_OK, databackIntent);
 			finish();
 		}catch(Exception e){
-			Log.d("EXE", e.toString());
+			Log.e("EXE", e.toString());
 		}
 	}	
 	

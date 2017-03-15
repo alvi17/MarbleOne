@@ -1,11 +1,14 @@
 package alvi17.marbleone;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+
+import static android.os.Build.VERSION_CODES.M;
 
 public class SelectBoard extends Activity implements OnClickListener {
 
@@ -101,6 +104,7 @@ public class SelectBoard extends Activity implements OnClickListener {
 			imgBoards[index].setImageResource(R.drawable.ic_select_frame_finished);
 		}else{
 			imgBoards[index].setImageResource(R.drawable.ic_select_frame);
+
 		}
 		imgBoards[index].invalidate();
 		prefEditor.commit();
@@ -108,6 +112,8 @@ public class SelectBoard extends Activity implements OnClickListener {
 	}
 
 	public void finish(View view){
+		Intent databackIntent = new Intent(SelectBoard.this,MASPebbleActivity.class);
+		startActivity(databackIntent);
 		finish();
 	}
 	

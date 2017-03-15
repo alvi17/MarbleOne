@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF"
     android:orientation="vertical" >
 
     <ScrollView
@@ -147,7 +148,7 @@
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:background="@drawable/ic_board6" />
+                    android:background="@drawable/board8" />
 
                 <ImageView
                     android:id="@+id/idImgBoard9"
@@ -156,7 +157,7 @@
                     android:layout_margin="15dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/ic_board7" />
+                    android:background="@drawable/board9" />
 
             </LinearLayout>
 
@@ -176,7 +177,7 @@
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:background="@drawable/ic_board6" />
+                    android:background="@drawable/board10" />
 
                 <ImageView
                     android:id="@+id/idImgBoard11"
@@ -185,7 +186,7 @@
                     android:layout_margin="15dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/ic_board7" />
+                    android:background="@drawable/board11" />
 
             </LinearLayout>
 
@@ -204,7 +205,7 @@
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:background="@drawable/ic_board6" />
+                    android:background="@drawable/board12" />
 
                 <ImageView
                     android:id="@+id/idImgBoard13"
@@ -213,7 +214,7 @@
                     android:layout_margin="15dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/ic_board7" />
+                    android:background="@drawable/board13" />
 
             </LinearLayout>
 
@@ -233,7 +234,7 @@
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:background="@drawable/ic_board6" />
+                    android:background="@drawable/board14" />
 
                 <ImageView
                     android:id="@+id/idImgBoard15"
@@ -242,7 +243,7 @@
                     android:layout_margin="15dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/ic_board7" />
+                    android:background="@drawable/board15"  />
 
             </LinearLayout>
 
@@ -262,7 +263,7 @@
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:background="@drawable/ic_board6" />
+                    android:background="@drawable/board16"  />
 
                 <ImageView
                     android:id="@+id/idImgBoard17"
@@ -271,7 +272,7 @@
                     android:layout_margin="15dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/ic_board7" />
+                    android:background="@drawable/board17" />
 
             </LinearLayout>
 
@@ -291,7 +292,7 @@
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:background="@drawable/ic_board6" />
+                    android:background="@drawable/board18"  />
 
                 <ImageView
                     android:id="@+id/idImgBoard19"
@@ -300,7 +301,7 @@
                     android:layout_margin="15dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/ic_board7" />
+                    android:background="@drawable/board19"  />
 
             </LinearLayout>
 
@@ -319,7 +320,7 @@
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:background="@drawable/ic_board6" />
+                    android:background="@drawable/board20"  />
 
 
 

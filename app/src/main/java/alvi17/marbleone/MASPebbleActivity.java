@@ -163,15 +163,15 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 	private int[] getGame6(){
 
 		int board[] = { 
-				-1, -1, -1,  1,  1,  1, -1, -1, -1, 
+				-1, -1, -1,  1,  0,  1, -1, -1, -1,
 				-1, -1, -1,  1,  1,  1, -1, -1, -1, 
 				-1, -1, -1,  1,  1,  1, -1, -1, -1, 
 				 1,  1,  1,  1,  1,  1,  1,  1,  1, 
-				 1,  1,  1,  1,  0,  1,  1,  1,  1,
+				 0,  1,  1,  1,  0,  1,  1,  1,  0,
 				 1,  1,  1,  1,  1,  1,  1,  1,  1,
 				-1, -1, -1,  1,  1,  1, -1, -1, -1,
 				-1, -1, -1,  1,  1,  1, -1, -1, -1,
-				-1, -1, -1,  1,  1,  1, -1, -1, -1,
+				-1, -1, -1,  1,  0,  1, -1, -1, -1,
 		};
 		effectiveRows = 10;
 		return board;
@@ -424,11 +424,9 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
     }
 
 	int pebble[];
-	
-	
+
 	Integer moveDetails[][] = new Integer[100][3];
 	int moveIndex = -1;
-
 	int moves = 0;
 	int noPebbles = 0;
 	boolean gameEnd = false;
@@ -437,7 +435,6 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 	Thread timerThread = null;
 	int animatde[] = {-1,-1};
 	int duration = 250;
-
 	int sec = 0;
 	int min = 0;
 	int hr = 0;
@@ -445,45 +442,33 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 	int cols = 9;
 	int rows = 9;
 	int effectiveRows = rows;
-
 	ImageView imgPebble[][] = new ImageView[rows][cols];
 	ImageView imgSlot[][] = new ImageView[rows][cols];
 	TextView txtTime = null;
-
 	RelativeLayout mainLayout = null; 
 	RelativeLayout slotLayout = null;
-
 	Animation moveUp = null;
 	Animation moveDown = null;
 	Animation moveLeft = null;
 	Animation moveRight = null;
 	Animation throwAway = null;
-
 	ImageView btnPause = null;
 	ImageView btnMute = null;
 	ImageView btnMusicMute = null;
-
 	public static final int ACTION_EXIT = 0;
 	public static final int ACTION_RESTART = 1;
 	public static final int ACTION_UNDO = 2;
 	public static final int ACTION_RESUME = 3;
-
 	boolean isMoving = false;
 	boolean imageSaved = false;
-
 	MediaPlayer player = null;
 	MediaPlayer musicPlayer = null;
-
 	int pebbleResource;
 	int selectedPebbleResource;
-
 	int BLUE = 0;
 	int RED = 3;
-
 	int marbleColor = BLUE;
 	int selectedMarbleColor = RED;
-
-
 
 	String sounds[] = {"select.ogg", "move.ogg", "noh.ogg"}; 
 
@@ -512,9 +497,9 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
             case 5: pebble = getGame5();break;
             case 6: pebble = getGame6();break;
             case 7: pebble = getGame7();break;
-            case 8:pebble=getGame8();break;
-            case 9:pebble=getGame9();break;
-            case 10:pebble=getGame10();break;
+            case 8: pebble=getGame8();break;
+            case 9: pebble=getGame9();break;
+            case 10: pebble=getGame10();break;
             case 11: pebble = getGame11();break;
             case 12: pebble = getGame12();break;
             case 13: pebble = getGame13();break;
@@ -523,8 +508,8 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
             case 16: pebble = getGame16();break;
             case 17: pebble = getGame17();break;
             case 18: pebble = getGame18();break;
-            case 19:pebble=getGame19();break;
-            case 20:pebble=getGame20();break;
+            case 19: pebble=getGame19();break;
+            case 20: pebble=getGame20();break;
 		default: pebble = getGame0();break;
 		}
 		noPebbles = getPebblesInBoard();
@@ -539,7 +524,6 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		int space = rl.leftMargin;
 		int distance = (size + space)*2;
 
-
 		moveRight = new TranslateAnimation(-distance, 0, 0, 0);
 		moveLeft = new TranslateAnimation(distance, 0, 0, 0);
 		moveDown = new TranslateAnimation(0, 0, -distance, 0);
@@ -548,8 +532,6 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 
 		moveUp.setDuration(duration);
 		moveUp.setFillAfter(true);
-
-
 
 		moveDown.setDuration(duration);
 		moveDown.setFillAfter(true);
@@ -610,9 +592,6 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		}
 		gameStarted = false;
 
-		//handler.
-
-
 		lastSelected[0] = -1;
 		lastSelected[1] = -1;
 		
@@ -629,9 +608,9 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
             case 5: pebble = getGame5();break;
             case 6: pebble = getGame6();break;
             case 7: pebble = getGame7();break;
-            case 8:pebble=getGame8();break;
-            case 9:pebble=getGame9();break;
-            case 10:pebble=getGame10();break;
+            case 8: pebble=getGame8();break;
+            case 9: pebble=getGame9();break;
+            case 10: pebble=getGame10();break;
             case 11: pebble = getGame11();break;
             case 12: pebble = getGame12();break;
             case 13: pebble = getGame13();break;
@@ -645,8 +624,6 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		default: pebble = getGame0();break;
 		}
 		noPebbles = getPebblesInBoard();
-		
-		
 
 		gameEnd = false;
 		gameStarted = false;
@@ -662,12 +639,6 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		setContentView(R.layout.main_layout);
 		initSlots();
 		setClickListeners();
-
-
-
-
-
-
 
 	}
 
@@ -946,14 +917,7 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		imgSlot[8][6] = (ImageView)findViewById(R.id.idSlot86);
 		imgSlot[8][7] = (ImageView)findViewById(R.id.idSlot87);
 		imgSlot[8][8] = (ImageView)findViewById(R.id.idSlot88);
-		
-		
-		
 
-
-		
-		
-		
 		RelativeLayout.LayoutParams rl = (RelativeLayout.LayoutParams)imgPebble[2][2].getLayoutParams();
 
 		int space = rl.leftMargin;
@@ -999,6 +963,7 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		}else{
 			btnMute.setImageResource(R.drawable.ic_volume_off_black_24dp);
 		}
+
 		if(masPref.getBoolean("music", true)){
 			btnMusicMute.setImageResource(R.drawable.ic_audiotrack_black_24dp);
 		}else{
@@ -1089,7 +1054,6 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		default:
 			break;
 		}
-
 
 	}
 
@@ -1250,11 +1214,19 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		// TODO Auto-generated method stub
 		
 		if(view == btnPause){
-			gamePaused = true;
-			if(gamePaused){
-				Intent i = new Intent(this, PauseGame.class);
-				MASPebbleActivity.this.startActivityForResult(i, 0);
-				return;
+			if(!gamePaused) {
+				gamePaused = true;
+				btnPause.setImageResource(R.drawable.ic_play_arrow_black_24dp);
+//				if (gamePaused) {
+//					Intent i = new Intent(this, PauseGame.class);
+//					MASPebbleActivity.this.startActivityForResult(i, 0);
+//					return;
+//				}
+			}
+			else
+			{
+				gamePaused=false;
+				btnPause.setImageResource(R.drawable.ic_pause_black_24dp);
 			}
 		}
 
@@ -1401,6 +1373,7 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
+		super.onBackPressed();
 		gamePaused = true;
 		Intent i = new Intent(this, PauseGame.class);
 		MASPebbleActivity.this.startActivityForResult(i, 0);
