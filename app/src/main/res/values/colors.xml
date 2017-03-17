@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="button_pause_textcolor">#FFFFFF</color>
+    <color name="gmae_over_textcolor">#1b1b1b</color>
 </resources>

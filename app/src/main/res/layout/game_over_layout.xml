@@ -1,60 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:layout_gravity="center_vertical"
-    android:background="#54a4df"
-    android:gravity="center_vertical"
     android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical|center_horizontal"
-        android:orientation="vertical" >
+        android:gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:padding="16dp"
+        android:orientation="vertical">
 
         <TextView
-                android:id="@+id/idCongrats"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/title_great"
-                android:gravity="center"
-                android:textColor="#FFFFFF"
-                android:layout_marginBottom="20sp"
-                android:textSize="30sp" />
+            android:id="@+id/idCongrats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:gravity="center"
+            android:text="@string/title_great"
+            android:textColor="@color/gmae_over_textcolor"
+            android:textSize="30sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/title_score"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/gmae_over_textcolor"
+
                     android:textSize="30sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/title_bonus"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/gmae_over_textcolor"
+
                     android:textSize="30sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/title_total"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/gmae_over_textcolor"
+
                     android:textSize="30sp" />
             </LinearLayout>
 
@@ -63,27 +66,30 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_marginLeft="10sp"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/idGameScore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/gmae_over_textcolor"
+
                     android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/idBonusScore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/gmae_over_textcolor"
+
                     android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/idTotalScore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/gmae_over_textcolor"
+
                     android:textSize="30sp" />
             </LinearLayout>
         </LinearLayout>
@@ -91,9 +97,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="2"
             android:layout_marginTop="10dp"
-            android:gravity="center_horizontal" >
+            android:gravity="center_horizontal"
+            android:weightSum="2">
 
             <ImageButton
                 android:id="@+id/restartGame"
@@ -101,11 +107,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="15sp"
-                android:background="#00000000"
+                android:layout_weight="1"
+                android:background="@drawable/blue_button"
                 android:contentDescription="@string/title_restart"
                 android:onClick="restartGame"
-                android:layout_weight="1"
-                android:src="@drawable/ic_restart" />
+                android:src="@drawable/ic_refresh_black_24dp" />
 
             <ImageButton
                 android:id="@+id/nextGame"
@@ -113,12 +119,24 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="15sp"
-                android:background="#00000000"
+                android:layout_weight="1"
+                android:background="@drawable/blue_button"
                 android:contentDescription="@string/title_next"
                 android:onClick="nextGame"
-                android:layout_weight="1"
-                android:src="@drawable/ic_next" />
+                android:src="@drawable/ic_navigate_next_black_24dp" />
         </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColor="#F02"
+            android:id="@+id/no_nexttextView"
+            android:visibility="gone"
+            android:text="Cannot go to next board unless you have less than or equal 3 marbles"
+            />
+
     </LinearLayout>
 
     <ImageButton

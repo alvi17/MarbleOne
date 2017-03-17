@@ -2,9 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/tools"
     android:layout_gravity="center_vertical"
     android:background="#FFFFFFFF"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/idHeaderLayout"
@@ -1698,19 +1700,18 @@
                 android:layout_toRightOf="@+id/idPebble78"
                 android:contentDescription="@string/pebble"
                 android:src="@drawable/ic_no_pebble" />
+
+
         </RelativeLayout>
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
         android:orientation="vertical"
-        >
-
-
-
-
-    </LinearLayout>
+      />
 
 
 

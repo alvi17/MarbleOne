@@ -38,7 +38,7 @@ public class PauseGame extends Activity implements OnClickListener{
 
 		setContentView(R.layout.pause_layout);
 
-		adLayout = (LinearLayout)findViewById(R.id.idAdLayout);
+
 		btnResume = (Button)findViewById(R.id.btnResume);
 		btnUndo = (Button)findViewById(R.id.btnUndo);
 		btnChangeColor = (Button)findViewById(R.id.btnSelectMarble);
@@ -78,11 +78,12 @@ public class PauseGame extends Activity implements OnClickListener{
 	@Override
 	public void onClick(View view) {
 		// TODO Auto-generated method stub
-		Log.d("onCLICK", "........");
+		Log.e("pauseGame", "........");
 		databackIntent = new Intent();
 		if(view == btnExit){
 			databackIntent.putExtra("action", MASPebbleActivity.ACTION_EXIT);
 		}else if(view == btnResume){
+			Log.e("pauseGame", "action resume");
 			databackIntent.putExtra("action", MASPebbleActivity.ACTION_RESUME);
 		}else if(view == btnRestart){
 			databackIntent.putExtra("action", MASPebbleActivity.ACTION_RESTART);
@@ -102,7 +103,7 @@ public class PauseGame extends Activity implements OnClickListener{
 			setResult(Activity.RESULT_OK, databackIntent);
 			finish();
 		}catch(Exception e){
-			Log.e("EXE", e.toString());
+			Log.e("PaguseGame", "Exception: "+e.toString());
 		}
 	}	
 	

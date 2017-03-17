@@ -66,10 +66,7 @@ public class GameOver extends Activity {
 				break;
 			}
 		}
-		if(pebble != 1){
-			ImageView btnNext = (ImageView)findViewById(R.id.nextGame); 
-			btnNext.setVisibility(View.GONE);
-		}
+
 		
 		txtGameMessage = (TextView)findViewById(R.id.idCongrats);
 		txtGameMessage.setText(message);
@@ -142,20 +139,28 @@ public class GameOver extends Activity {
 	}
 
 	public void nextGame(View view){
-		SharedPreferences masPref = this.getSharedPreferences("alvi17.marbleone", MODE_PRIVATE);
-		int i=0;
-		for(i=0; i<NO_BOARDS; i++){
-			if(!masPref.getBoolean("game"+i+"_finished", false)){
-				break;
-			}
-		}
-		if(i==NO_BOARDS){
-			i = 0;
-		}
-		SharedPreferences.Editor prefEditor = masPref.edit();
-		prefEditor.putInt("board", i);
-		prefEditor.commit();
-		restartGame();
+
+        if(pebble >= 4){
+            TextView no_next= (TextView) findViewById(R.id.no_nexttextView);
+            no_next.setVisibility(View.VISIBLE);
+        }
+        else {
+
+            SharedPreferences masPref = this.getSharedPreferences("alvi17.marbleone", MODE_PRIVATE);
+            int i = 0;
+            for (i = 0; i < NO_BOARDS; i++) {
+                if (!masPref.getBoolean("game" + i + "_finished", false)) {
+                    break;
+                }
+            }
+            if (i == NO_BOARDS) {
+                i = 0;
+            }
+            SharedPreferences.Editor prefEditor = masPref.edit();
+            prefEditor.putInt("board", i);
+            prefEditor.commit();
+            restartGame();
+        }
 	}
 
 

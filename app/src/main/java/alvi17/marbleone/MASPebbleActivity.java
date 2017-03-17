@@ -26,6 +26,7 @@ import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -39,6 +40,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 
 @SuppressLint("RtlHardcoded")
@@ -476,8 +482,11 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 	private static int MOVE_SUCESS = 1;
 	private static int MOVE_INVALID = 2;
 
-
-
+    private InterstitialAd interstitial;
+    boolean isadLoaded=false;
+    AdRequest aRequest;
+	AdView adView;
+	AdRequest adRequest;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -563,7 +572,6 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 
 	}
 
@@ -666,14 +674,14 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		}
 		if(noPebbles == 1){
 			intent.putExtra("message", getResources().getString(R.string.title_hatsoff));
-			intent.putExtra("send", String.format(getResources().getString(R.string.title_finished), score + timebonus));
+			intent.putExtra("send", getResources().getString(R.string.title_finished));
 
 		}else if(noPebbles < 4){
 			intent.putExtra("message", getResources().getString(R.string.title_great));
-			intent.putExtra("send", String.format(getResources().getString(R.string.title_game_end), score + timebonus));
+			intent.putExtra("send", getResources().getString(R.string.title_game_end));
 		}else{
 			intent.putExtra("message", getResources().getString(R.string.title_gameover));
-			intent.putExtra("send", String.format(getResources().getString(R.string.title_game_end), score + timebonus));
+			intent.putExtra("send", getResources().getString(R.string.title_game_end));
 
 		}
 		intent.putExtra("bonus", timebonus);
@@ -1026,7 +1034,9 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		}
 		
 		int action = data.getIntExtra("action", 0);
+		Log.e("MASAPACtivity","onactivityResult: action: "+action);
 		switch (action) {
+
 		case ACTION_EXIT:
 			finish();
 			break;
@@ -1046,6 +1056,8 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 			gamePaused = false;
 			SharedPreferences masPref = this.getSharedPreferences("alvi17.marbleone", MODE_PRIVATE);
 			int newboard = masPref.getInt("board", DEFAULT);
+			Log.e("MASAPACtivity","onactivityResult: resume");
+
 			if(board != newboard){
 				board = newboard;
 				askForRestart();
@@ -1347,7 +1359,7 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 								gameEnd = true;
 							}else if(checkDeadLock()){
 								Toast.makeText(getApplicationContext(),
-										"Oops!. No further move possible",
+										"No further move possible",
 										Toast.LENGTH_SHORT).show();
 								gameEnd = true;
 							}
@@ -1373,9 +1385,16 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
-		super.onBackPressed();
+		//super.onBackPressed();
+
+        if(isadLoaded)
+        {
+            interstitial.show();
+        }
+
+
 		gamePaused = true;
-		Intent i = new Intent(this, PauseGame.class);
+		Intent i = new Intent(MASPebbleActivity.this, PauseGame.class);
 		MASPebbleActivity.this.startActivityForResult(i, 0);
 		return;
 	}
@@ -1622,10 +1641,42 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
+		super.onResume();
 		if(masPref.getBoolean("music", true)){
 			musicPlayer.start();
 		}
-		super.onResume();
+		interstitial=new InterstitialAd(this);
+		interstitial.setAdUnitId("ca-app-pub-6508526601344465/4046023638");
+		aRequest = new AdRequest.Builder().addTestDevice("0754C239B1E2E19421FDE46BCEFB8855").build();
+
+		// Begin loading your interstitial.
+		interstitial.loadAd(aRequest);
+
+		interstitial.setAdListener(
+				new AdListener() {
+					@Override
+					public void onAdLoaded() {
+						super.onAdLoaded();
+						isadLoaded=true;
+
+					}
+				}
+		);
+
+		LinearLayout linearLayout=(LinearLayout)findViewById(R.id.adView);
+		adView = new AdView(this);
+		adRequest = new AdRequest.Builder().addTestDevice("0754C239B1E2E19421FDE46BCEFB8855")
+				.build();
+
+		adView.setAdSize(AdSize.BANNER);
+		adView.setAdUnitId("ca-app-pub-6508526601344465/7439164033");
+		adView.loadAd(adRequest);
+
+		if(linearLayout.getChildCount()>0)
+		{
+			linearLayout.removeAllViews();
+		}
+		linearLayout.addView(adView);
 	}
 
 	@Override
@@ -1643,7 +1694,6 @@ public class MASPebbleActivity extends AppCompatActivity implements OnClickListe
 		{
 			undoMove();
 		}
-
 
 		return true;
 	}
